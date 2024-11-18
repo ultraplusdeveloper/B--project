@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Beauty Booking</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Beauty Booking</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search services..." class="search-bar" id="search-bar" list="service-list">
+            <button class="search-button" onclick="searchServices()">Search</button>
+            <datalist id="service-list">
+                <option value="Haircut"></option>
+        <option value="Hair Coloring"></option>
+        <option value="Perm"></option>
+        <option value="Wash & Style"></option>
+        <option value="Facial"></option>
+        <option value="Scalp Treatment"></option>
+        <option value="Manicure"></option>
+        <option value="Pedicure"></option>
+        <option value="Lash & Brows"></option>
+        <option value="Bridal Makeup"></option>
+        <option value="Back Massage"></option>
+        <option value="reflexology"></option>
+        <option value="Waxing"></option>
+        <option value="Eyebrow Shaping"></option>
+            </datalist>
+        </div>
+
+        <nav>
+            <!-- menu icon -->
+            <span class="menu-icon">☰</span>
+            <ul class="nav-links">
+                <li><a href="#introduction">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        
+    </header>
+
+    <!-- Hero Section -->
+    <section id="introduction" class="hero">
+        <h2>Welcome to Beauty Booking!</h2>
+        <p>Your one-stop destination for all your beauty needs. We offer a variety of services to help you look and feel your best.</p>
+        <a href="#services" class="cta-button">Explore Our Services</a>
+    </section>
+
+
+    <main>
+        <section id="services">
+            <h2>Our Services</h2>
+            
+            <div class="category">
+                <h3>Hair Services</h3>
+                <div class="service-grid">
+                    <div class="service" data-service-name="HairCut">
+                        <img src="haircut.jpg" alt="Haircut">
+                        <h3>Haircut</h3>
+                        <p>Price: $30</p>
+                        <button onclick="bookService('Haircut', 30)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Hair Coloring">
+                        <img src="haircolor.jpg" alt="Hair Coloring">
+                        <h3>Hair Coloring</h3>
+                        <p>Price: $80</p>
+                        <button onclick="bookService('Hair Coloring', 80)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Perm">
+                        <img src="perm.jpg" alt="perm">
+                        <h3>Perm</h3>
+                        <p>Price: $50</p>
+                        <button onclick="bookService('Perm', 50)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Wash & Style">
+                        <img src="wash & style.jpg" alt="Wash & Style">
+                        <h3>Wash & Style</h3>
+                        <p>Price: $25</p>
+                        <button onclick="bookService('Wash & Style', 25)">Book Now</button>
+                    </div>
+                    
+                </div>
+            </div>
+        
+            <div class="category">
+                <h3>Facial Services</h3>
+                <div class="service-grid">
+                    <div class="service" data-service-name="Facial">
+                        <img src="facial.jpg" alt="Facial">
+                        <h3>Facial</h3>
+                        <p>Price: $50</p>
+                        <button onclick="bookService('Facial', 50)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Scalp Treatment">
+                        <img src="Rejuve Scalp-Hair Therapy.jpg" alt="Scalp Treatment">
+                        <h3>Scalp Treatment</h3>
+                        <p>Price: $45</p>
+                        <button onclick="bookService('Scalp Treatment', 45)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Microneeding">
+                        <img src="Microneeding.jpg" alt="Microneeding">
+                        <h3>Microneeding</h3>
+                        <p>Price: $150</p>
+                        <button onclick="bookService('Microneeding', 150)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Hydrofacial">
+                        <img src="Hydra Facial Treatment.jpg" alt="Hydrofacial">
+                        <h3>Hydrofacial</h3>
+                        <p>Price: $120</p>
+                        <button onclick="bookService('Hydrofacial', 120)">Book Now</button>
+                    </div>
+                    
+                </div>
+            </div>
+        
+            <div class="category">
+                <h3>Nail Services</h3>
+                <div class="service-grid">
+                    <div class="service" data-service-name="Manicure">
+                        <img src="manicure.jpg" alt="Manicure">
+                        <h3>Manicure</h3>
+                        <p>Price: $25</p>
+                        <button onclick="bookService('Manicure', 25)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="pedicure">
+                        <img src="pedicure.jpg" alt="Pedicure">
+                        <h3>Pedicure</h3>
+                        <p>Price: $30</p>
+                        <button onclick="bookService('Pedicure', 30)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Nailpolish">
+                        <img src="Nailpolish.jpg" alt="Nailpolish">
+                        <h3>Nailpolish</h3>
+                        <p>Price: $40</p>
+                        <button onclick="bookService('Nailpolish', 40)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Extra">
+                        <img src="Extra.jpg" alt="Extras">
+                        <h3>Extras</h3>
+                        <p>Price: $50</p>
+                        <button onclick="bookService('Extras', 50)">Book Now</button>
+                    </div>
+                    
+                </div>
+            </div>
+        
+            <div class="category">
+                <h3>Makeup Services</h3>
+                <div class="service-grid">
+                    <div class="service" data-service-name="Lash & Brows">
+                        <img src="eyeliner ideas.jpg" alt="Lash & Brows">
+                        <h3>Lash & Brows</h3>
+                        <p>Price: $70</p>
+                        <button onclick="bookService('Lash & Brows', 70)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Bridal Makeup">
+                        <img src="bridal makeup.jpg" alt="Bridal Makeup">
+                        <h3>Bridal Makeup</h3>
+                        <p>Price: $150</p>
+                        <button onclick="bookService('Bridal Makeup', 150)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Natural Makeup">
+                        <img src="natural.jpg" alt="Natural Makeup">
+                        <h3>Natural Makeup</h3>
+                        <p>Price: $90</p>
+                        <button onclick="bookService('Natural Makeup', 90)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="glamourous Makeup">
+                        <img src="Smooth and Soft Makeup Glam.jpg" alt="glamourous Makeup">
+                        <h3>glamourous Makeup</h3>
+                        <p>Price: $140</p>
+                        <button onclick="bookService('glamourous Makeup', 140)">Book Now</button>
+                    </div>
+                    
+                </div>
+            </div>
+        
+            <div class="category">
+                <h3>Massage Services</h3>
+                <div class="service-grid">
+                    <div class="service" data-service-name="Back massage">
+                        <img src="Back massage.jpg" alt="Massage Therapy">
+                        <h3>Back Massage</h3>
+                        <p>Price: $90</p>
+                        <button onclick="bookService('Massage Therapy', 90)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="reflexology">
+                        <img src="Reflexology.jpg" alt="Reflexology">
+                        <h3>Reflexology</h3>
+                        <p>Price: $170</p>
+                        <button onclick="bookService('reflexology', 170)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="full body massage">
+                        <img src="full body massage.jpg" alt="Full Massage">
+                        <h3>Full Massage</h3>
+                        <p>Price: $170</p>
+                        <button onclick="bookService('Full Massage', 170)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="sinus">
+                        <img src="Hot Stone Sinus Massage.jpg" alt="sinus">
+                        <h3>Sinus</h3>
+                        <p>Price: $90</p>
+                        <button onclick="bookService('Sinus', 90)">Book Now</button>
+                    </div>
+                    
+                </div>
+            </div>
+        
+            <div class="category">
+                <h3>Other Services</h3>
+                <div class="service-grid">
+                    <div class="service" data-service-name="waxing">
+                        <img src="waxing.jpg" alt="Waxing">
+                        <h3>Waxing</h3>
+                        <p>Price: $40</p>
+                        <button onclick="bookService('Waxing', 40)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Eyebrow Shaping">
+                        <img src="eyebrows.jpg" alt="Eyebrow Shaping">
+                        <h3>Eyebrow Shaping</h3>
+                        <p>Price: $15</p>
+                        <button onclick="bookService('Eyebrow Shaping', 15)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="Moroccan body scrub & Massage">
+                        <img src="wash.jpg" alt="Moroccan body scrub & Massage">
+                        <h3>Moroccan body scrub & Massage</h3>
+                        <p>Price: $90</p>
+                        <button onclick="bookService('Moroccan body scrub & Massage', 90)">Book Now</button>
+                    </div>
+                    <div class="service" data-service-name="spa">
+                        <img src="spa.jpg" alt="spa">
+                        <h3>Spa</h3>
+                        <p>Price: $90</p>
+                        <button onclick="bookService('spa', 90)">Book Now</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section id="booking-summary">
+            <h2>Your Booking Summary</h2>
+            <div id="summary-content">
+            </div>
+            <button id="proceed-to-booking-form">Proceed to Book Your Appointment</button>
+        </section>
+
+        <section id="booking-form" style="display: none;">
+            <h2>Book Your Appointment</h2>
+            <form id="appointment-form">
+                <label for="date">Select Date:</label>
+                <input type="date" id="date" name="date" required>
+        
+                <label for="time">Select Time:</label>
+                <input type="time" id="time" name="time" required>
+        
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+        
+                <label for="contact">Contact Number:</label>
+                <input type="tel" id="contact" name="contact" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            
+        
+                <button type="submit">Confirm Appointment</button>
+            </form>
+        </section>
+
+        
+        <section id="booking-confirmation" style="display: none;">
+            <h2>Booking Confirmation</h2>
+            <p>Thank you for your booking!</p>
+            <p>Your appointment has been successfully scheduled. Below are the details:</p>
+            
+            <div class="confirmation-details">
+                <p><strong>Services:</strong> <span id="confirm-services"></span></p>
+                <p><strong>Date:</strong> <span id="confirm-date"></span></p>
+                <p><strong>Time:</strong> <span id="confirm-time"></span></p>
+                <p><strong>Client Name:</strong> <span id="confirm-name"></span></p>
+                <p><strong>Contact:</strong> <span id="confirm-contact"></span></p>
+                <p><strong>Client Email:</strong> <span id="confirm-email"></span></p>
+            </div>
+    
+            <button onclick="sendConfirmationEmail()">Send Confirmation to Email</button>
+             <p id="email-status"></p>
+            
+            <p>If you have any questions or need to make changes, please contact us.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>At Beauty Booking, we are dedicated to providing top-notch beauty services. Our experienced professionals are here to ensure you have a relaxing and enjoyable experience.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: contact@beautybooking.com</p>
+            <p>Phone: (123) 456-7890</p>
+            <p>Address: Kenya, Nairobi City, ES 010010</p>
+        </section>
+    </main>
+    
+
+    <footer>
+        <p>&copy; 2024 Beauty Booking. All rights reserved.</p>
+        <p>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a> |
+            <a href="terms.html" class="footer-link">Terms of Use</a>
+        </p>
+    </footer>
+    
+    <button id="scrollToTopBtn" onclick="scrollToTop()">▲</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
