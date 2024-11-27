@@ -1,39 +1,75 @@
 
-// Toggle menu function
 function toggleMenu() {
     const navLinks = document.querySelector('.nav-links');
     navLinks.classList.toggle('active'); 
 }
 
-// Add event listener to the menu icon
 document.querySelector('.menu-icon').addEventListener('click', toggleMenu);
+
+const userSignedIn = localStorage.getItem("userSignedIn") === "true";
+const userName = localStorage.getItem("userName");
+
+const userIcon = document.getElementById("userIcon");
+const userNameDisplay = document.getElementById("userNameDisplay");
+const signOutBtn = document.getElementById("signOutBtn");
+
+function updateUI() {
+   if (userSignedIn && userName) {
+  userIcon.style.display = "none";
+  userNameDisplay.style.display = "block";
+  userNameDisplay.textContent = userName; 
+  signOutBtn.style.display = "block";
+
+} else {
+   userIcon.style.display = "block";
+   userNameDisplay.style.display = "none";
+   signOutBtn.style.display = "none"; 
+}
+}
+
+   signOutBtn.addEventListener("click", () => {
+      localStorage.removeItem("userSignedIn");
+      localStorage.removeItem("userName");
+
+      updateUI();
+
+      userIcon.style.display = "block";
+      userNameDisplay.style.display = "none";
+      signOutBtn.style.display = "none";
+
+      window.location.href = "http://127.0.0.1:5500/index.html";
+    });
+
+  userIcon.addEventListener("click", () => {
+    alert("Redirecting to Log In page...");
+    window.location.href = "LogIn.html";
+  });
+
+  updateUI();
+
+
+
 
    // Search Bar 
 function searchServices() {
     const searchInput = document.getElementById('search-bar').value.toLowerCase();
     const services = document.querySelectorAll('.service');
 
-    // Clear previous highlights
     services.forEach(service => {
-        service.style.backgroundColor = ''; // reset background color
+        service.style.backgroundColor = ''; 
     });
 
-    // Find and highlight matching service
     for (let service of services) {
         const serviceName = service.getAttribute('data-service-name').toLowerCase();
 
         if (serviceName.includes(searchInput)) {
-            // Highlight the service
-            service.style.backgroundColor = '#ffff99'; // light yellow highlight
-
-            // Scroll to the service
+            service.style.backgroundColor = '#ffff99'; 
             service.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            break; // stop after finding the first match
+            break;
         }
     }
 }
-
-// Booking Form & Booking Summary 
+ 
 document.addEventListener("DOMContentLoaded", function () {
     const proceedToBookingFormButton = document.getElementById("proceed-to-booking-form");
     const bookingFormSection = document.getElementById("booking-form");
@@ -47,11 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const confirmContact = document.getElementById("confirm-contact");
     const confirmEmail = document.getElementById("confirm-email");
 
-    // Array to hold booked services
     let bookedServices = [];
     let totalAmount = 0;
 
-    // Function to add a service to the booking summary
     function bookService(serviceName, servicePrice) {
         if (!bookedServices.includes(serviceName)) {
             bookedServices.push(serviceName);
@@ -60,13 +94,10 @@ document.addEventListener("DOMContentLoaded", function () {
         updateBookingSummary();
     }
 
-    
-    // Function to update the booking summary display
     function updateBookingSummary() {
         const summaryContent = document.getElementById("summary-content");
-        summaryContent.innerHTML = ""; // Clear previous content
+        summaryContent.innerHTML = "";
 
-        // Display each booked service
         if (bookedServices.length > 0) {
             bookedServices.forEach(service => {
                 const serviceItem = document.createElement("p");
@@ -74,7 +105,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 summaryContent.appendChild(serviceItem);
             });
             
-            // Display the total amount
             const totalItem = document.createElement("p");
             totalItem.innerHTML = `<strong>Total: $${totalAmount}</strong>`;
             summaryContent.appendChild(totalItem);
@@ -86,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Proceed to booking form when button is clicked
     proceedToBookingFormButton.addEventListener("click", function () {
         if (bookedServices.length > 0) {
             bookingFormSection.style.display = "block";
@@ -98,14 +127,12 @@ document.addEventListener("DOMContentLoaded", function () {
     appointmentForm.addEventListener("submit", function (e) {
         e.preventDefault();
 
-        // Collect form details
         const date = document.getElementById("date").value;
         const time = document.getElementById("time").value;
         const name = document.getElementById("name").value;
         const contact = document.getElementById("contact").value;
         const email = document.getElementById("email").value;
 
-        // Populate confirmation section with booked services and form details
         confirmServices.textContent = bookedServices.join(", ");
         confirmDate.textContent = date;
         confirmTime.textContent = time;
@@ -113,12 +140,10 @@ document.addEventListener("DOMContentLoaded", function () {
         confirmContact.textContent = contact;
         confirmEmail.textContent = email; 
 
-        // Show confirmation and hide form
         bookingFormSection.style.display = "none";
         bookingConfirmationSection.style.display = "block";
     });
 
-     // Update the sendConfirmationEmail function
      window.sendConfirmationEmail = function () {
         const date = confirmDate.textContent;
         const time = confirmTime.textContent;
@@ -138,32 +163,27 @@ document.addEventListener("DOMContentLoaded", function () {
     
         if (name && contact && services && email) {
             emailStatus.textContent = `Confirmation email sent to ${email} for the following services: ${services} on ${date} at ${time}.`;
-            emailStatus.style.color = 'green'; // Indicate success
+            emailStatus.style.color = 'green'; 
         } else {
             emailStatus.textContent = "Unable to send email. Please ensure all information is filled out.";
-            emailStatus.style.color = 'red'; // Indicate error
+            emailStatus.style.color = 'red';
         }
     };
     
-
-    // Initially disable the proceed button
     proceedToBookingFormButton.disabled = true;
 
-    // Make bookService available globally so it can be called by button click
     window.bookService = bookService;
 });
 
-// Show or hide the button based on scroll position
 window.onscroll = function() {
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollToTopBtn.style.display = "block"; // Show button when scrolled down
+        scrollToTopBtn.style.display = "block"; 
     } else {
-        scrollToTopBtn.style.display = "none"; // Hide button at the top
+        scrollToTopBtn.style.display = "none";
     }
 };
 
-// Scroll to the top of the page smoothly
 function scrollToTop() {
     window.scrollTo({
         top: 0,
@@ -171,3 +191,4 @@ function scrollToTop() {
     });
 }
 
+  

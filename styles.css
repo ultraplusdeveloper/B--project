@@ -8,13 +8,11 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: #fffffe; /* Paragraph color */
+    color: #fffffe;
     background:white;
 }
 
-/* Header styles */
 header {
-    
     background:#faeee7;
     padding: 20px;
     display: flex;
@@ -62,42 +60,62 @@ color:#fffffe;
 
 nav {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: white;
     justify-content: space-between;
-    align-items: center;
-    padding: 30px 50px 20px 60px; 
-    color: #f8f8f8; 
     position: relative; 
-}
+  }
 
-/* Desktop Styles */
+  #userIcon {
+    display: block; 
+    color: #ff8ba7;
+  }
+
+  #userNameDisplay {
+    color: #ff8ba7;
+    display: none;
+  }
+
+  #signOutBtn {
+    display: none; 
+    margin-top: 10px;
+    background-color: #ff8ba7;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
 .nav-links {
     list-style-type: none;
     padding: 0;
     display: flex;
+    margin: 0;
 }
 
 .nav-links li {
     margin: 0 15px; 
+    cursor: pointer;
 }
 
-/* Fixed menu icon styles */
 .menu-icon {
-    display: none; /* Hide menu icon by default */
+    display: none; 
     position: fixed; 
     top: 20px; 
     right: 20px; 
     font-size: 24px;
     cursor: pointer;
-    z-index: 2000; /* Higher z-index to stay on top */
+    z-index: 2000;
     color: #0e172c;
 }
 .menu-icon:hover{
     color: #ff8ba7;
 }
 
-/* Mobile styles */
+
 @media (max-width: 768px) {
-    /* Show menu icon on mobile */
     .menu-icon {
         display: block;
     }
@@ -123,11 +141,10 @@ nav {
 
 
     .menu-icon {
-        display: block; /* Show menu icon in mobile */
+        display: block;
     }
 }
 
-/* Hero section styles */
 .hero {
     background:url('DALL·E\ 2024-10-26\ 01.46.12\ -\ A\ realistic\,\ feminine\ poster\ for\ a\ beauty\ booking\ salon\ website\ with\ a\ soft\ pastel\ pink\ and\ white\ color\ scheme\,\ accented\ with\ gold.\ The\ design\ feature.webp') no-repeat center center/cover;
     background-color: white;
@@ -153,7 +170,6 @@ nav {
     text-decoration: none;
 }
 
-/* Main content styles */
 main {
     padding: 20px;
     margin-top: 20px; 
@@ -174,7 +190,7 @@ main {
     font-size: 25px;
 }
 
-/* Services section */
+
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -271,7 +287,7 @@ p {
     color: #594a4e;
 }
 
-/* Link */
+
 a {
     color: #ff8ba7; 
     text-decoration: none;
@@ -281,8 +297,6 @@ a:hover {
     text-decoration: underline; 
 }
 
-
-/* Footer styles */
 footer {
     background: #faeee7; 
     color: #594a4e; 
@@ -290,10 +304,10 @@ footer {
     padding: 20px 0;
     margin-top: 40px;
 }
-/* Footer link styles */
+
 .footer-link {
     color: #594a4e; 
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
     font-size: 14px; 
     margin: 0 10px; 
 }
@@ -303,7 +317,6 @@ footer {
     color: #ff8ba7; 
 }
 
-/* Booking form styles */
 #booking-form {
     background:#fffffe;
     border-radius: 10px;
@@ -328,7 +341,7 @@ footer {
     cursor: pointer;
 }
 
-/* Responsive design */
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -364,11 +377,10 @@ footer {
     padding: 10px 15px;
     font-size: 24px;
     cursor: pointer;
-    z-index: 1000; /* Ensure it appears on top */
+    z-index: 1000; 
 }
 
 #scrollToTopBtn:hover {
     color: #0e172c;
 }
-
 
