@@ -146,7 +146,7 @@ nav {
 }
 
 .hero {
-    background:url('DALL·E\ 2024-10-26\ 01.46.12\ -\ A\ realistic\,\ feminine\ poster\ for\ a\ beauty\ booking\ salon\ website\ with\ a\ soft\ pastel\ pink\ and\ white\ color\ scheme\,\ accented\ with\ gold.\ The\ design\ feature.webp') no-repeat center center/cover;
+    background:url('images/DALL·E\ 2024-10-26\ 01.46.12\ -\ A\ realistic\,\ feminine\ poster\ for\ a\ beauty\ booking\ salon\ website\ with\ a\ soft\ pastel\ pink\ and\ white\ color\ scheme\,\ accented\ with\ gold.\ The\ design\ feature.webp') no-repeat center center/cover;
     background-color: white;
     text-align: center;
     padding: 100px 20px;
@@ -297,12 +297,24 @@ a:hover {
     text-decoration: underline; 
 }
 
+
+
 footer {
     background: #faeee7; 
     color: #594a4e; 
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
 .footer-link {

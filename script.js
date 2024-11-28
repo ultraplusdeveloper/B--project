@@ -191,4 +191,22 @@ function scrollToTop() {
     });
 }
 
-  
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+
+        if (!name || !email || !subject || !message) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        setTimeout(() => {
+            alert("Your message has been sent successfully!");
+
+            window.location.href = "http://127.0.0.1:5500/index.html"; 
+        }, 1000); 
+    });
